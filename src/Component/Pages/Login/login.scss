@@ -80,7 +80,7 @@
                     background-color: $bg-color;
                     &::placeholder{
                         font-size: 14px;
-                        color: black;
+                        color: rgb(141, 131, 131);
                     }
                     &:focus{
                         background-color: $txt-color-2;

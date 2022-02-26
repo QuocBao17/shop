@@ -67,11 +67,14 @@ const Login =()=>{
             navigate('/products');
             const user = userCredential.user;
             CheckRole();
-            // ...
           })
           .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            let errors={};
+            errors['password'] = 'Username or password wrong';
+            setFieldsInput({
+                ...fieldsInput,
+                errors,
+            })
           });
     }
     const onSubmit=(e)=>{

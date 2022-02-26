@@ -214,7 +214,7 @@ const Banners =(props)=>{
                         <h2>Banner</h2>
                         <div className="function__banner">
                             <div className="function__banner__search">
-                                <input type="text" onChange={(e)=>setFilterName(e.target.value)} placeholder="Search by product name"/>
+                                <input type="text" onChange={(e)=>setFilterName(e.target.value)} placeholder="Search by banner name"/>
                             </div>
                             <div className="function__banner__sort">
                             <select name="" id="" onChange={onSort}>

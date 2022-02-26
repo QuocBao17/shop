@@ -259,7 +259,7 @@ const Staff =(props)=>{
                         <h2>Our Staffs</h2>
                         <div className="function__staff">
                             <div className="function__staff__search">
-                                <input type="text" placeholder="Search by product name" onChange={(e)=>setFilterName(e.target.value)}/>
+                                <input type="text" placeholder="Search by staff name" onChange={(e)=>setFilterName(e.target.value)}/>
                             </div>
                             <div className="function__staff__select">
                             <select name="" id="" onChange={(e)=>setFilterRole(e.target.value)}>

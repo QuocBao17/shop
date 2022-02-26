@@ -164,7 +164,7 @@ const Counpons=(props)=>{
                         <h2>Coupons</h2>
                         <div className="function__coupons">
                             <div className="function__coupons__search">
-                                <input type="text" onChange={(e)=>setFilterName(e.target.value)} placeholder="Search by product name"/>
+                                <input type="text" onChange={(e)=>setFilterName(e.target.value)} placeholder="Search by coupons name"/>
                             </div>
                             <div className="function__coupons__add-coupons">
                                 <button onClick={openForm}><span><i className="fas fa-plus" ></i></span>Add Coupons</button>
