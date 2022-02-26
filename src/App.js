@@ -28,7 +28,7 @@ function App() {
     setFormStatus(formStt);
   }
   return (
-   <HashRouter basename='/shop'>
+   <HashRouter>
       <Routes>
           <Route path='/' element={<Login></Login>}></Route>
             <Route path='/products' element={<Product menuStatus={menuStatus} formStatus={formStatus} getFormStatus={getFormStatus} 
