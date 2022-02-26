@@ -1,0 +1,142 @@
+@use './../../../../Scss/' as *;
+.detail-product{
+    &__container{  
+        font-family: $font-family;
+        @include flex(unset,unset);
+      
+        &__main{
+            position: relative;
+            width: 100%;
+            &__wrap{
+                margin-top: 80px;
+                padding: 40px;
+                background-color: $bg-color;
+                border: 1px solid $outline-color;
+                border-radius: 5px;
+                h2{
+                    color: $txt-color-3;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0 0 30px 0;
+                    @include mobile{
+                        font-size: 20px;
+                    }
+                }
+                .detail-info{
+        
+                    &__wrap{
+                        padding: 20px;
+                        background-color: #fff;
+                        @include flex(space-between, unset);
+                        @include mobile{
+                            flex-direction: column;
+                        }
+                        width: 100%;
+                        &__image{
+                            width: 50%;
+                            @include mobile{
+                                width: 100%;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                            img{
+                                width: 94%;
+                            }
+                        }
+                        &__main{
+                            width: 50%;
+                            @include mobile{
+                                width: 100%;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                            h4{
+                                font-weight: bold;
+                                color: $txt-color;
+                                font-size: 16px;
+                            }
+                            span.published{
+                                color: $main-color;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                            span.hidden{
+                                color: #FF5A1F;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                            &__name{
+                                margin: 20px 0 10px 0;
+                                h2{
+                                    font-size: 30px;
+                                    font-weight: lighter;
+                                }
+                            }
+                            &__price{
+                                h2{
+                                    font-size: 28px;
+                                }
+                            }
+                            &__stock{
+                                @include flex(unset,center);
+                                p{
+                                    border-radius: 20px;
+                                    font-weight: bold;
+                                    font-size: 12px;
+                                    padding: 5px 10px;
+                                    color: $main-color;
+                                    background-color: rgb(198, 243, 198);
+                                }
+                                span{
+                                    color: $txt-color;
+                                    font-size: 14px;
+                                    font-weight: lighter;
+                                    margin-left: 10px;
+                                }
+                            }
+                            &__decription{
+                                margin: 30px 0;
+                                font-size: 14px;
+                                font-weight: lighter;
+                                line-height: 30px;
+                                color: $txt-color;
+                                @include mobile{
+                                    line-height: 20px;
+                                }
+                            }
+                            &__category{
+                                p{
+                                    color: $txt-color-3;
+                                    font-weight: bold;
+                                    font-size:  14px;
+                                    span{
+                                        color: $txt-color;
+                                        font-size:  14px;
+                                    }
+                                }
+                            }
+                            &__button{
+                                margin: 30px 0 0 0;
+                                button{
+                                    cursor: pointer;
+                                    padding: 15px 20px;
+                                    background-color: $main-color;
+                                    color: $txt-color-2;
+                                    border: none;
+                                    border-radius: 5px;
+                                    width: 130px;
+                                    transition:  all 0.3s ease;
+                                    &:hover{
+                                        background-color: $hover-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

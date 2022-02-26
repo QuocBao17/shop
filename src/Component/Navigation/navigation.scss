@@ -1,0 +1,59 @@
+@use './../Scss/'as *;
+.navigation{
+    border-top: 1px solid $bg-color;
+    padding: 10px 0;
+    @include flex(space-between,center);
+    background-color: #fff;
+    width: 100%;
+    @include mobile{
+        @include flex(unset,unset);
+        flex-direction: column;
+    }
+    p{
+        padding: 0 0 0 40px;
+        @include laptop{
+            font-size: 12px;
+        }
+        @include tablet{
+            font-size: 12px;
+            font-weight: bolder;
+        }
+        @include mobile {
+            font-size: 12px;
+            padding-left: 8%;
+        }
+        
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 40px;
+    }
+    &__wrap{
+        i{
+            cursor: pointer;
+        }
+        padding: 0 40px 0 0 ;
+        @include mobile{
+            padding-left: 8%;
+        }
+        @include flex(unset,center);
+        &__button{
+            @include flex(unset,center);
+            button{
+                margin: 0 5px;
+                color: $txt-color-2;
+                background-color: $main-color;
+                width: 35px;
+                height: 35px;
+                border-radius: 5px;
+                border: 1px solid $main-color;
+                font-size: 10px;
+                @include flex(center,center);
+                &:disabled{
+                    background-color: rgb(114, 108, 108);
+                    border: 1px solid rgb(114, 108, 108);
+                }
+            }
+           
+        }
+    }
+}

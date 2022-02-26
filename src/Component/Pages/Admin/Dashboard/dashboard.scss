@@ -1,0 +1,167 @@
+@use './../../../Scss/' as *;
+.dashboard{
+    &__container{  
+        font-family: $font-family;
+        @include flex(unset,unset);
+        &__main{
+            position: relative;
+            width: 100%;
+            &__wrap{
+                margin-top: 80px;
+                padding: 40px;
+                background-color: $bg-color;
+                border: 1px solid $outline-color;
+                border-radius: 5px;
+                
+                h2{
+                    color: $txt-color-3;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0 0 30px 0;
+                    @include mobile{
+                        font-size: 20px;
+                    }
+                }
+                .all-data{
+                    @include flex(space-between,center);
+                    @include mobile{
+                        flex-direction: column;
+                    }
+                    .today, .month, .total{
+                        @include flex(center,center);
+                        flex-direction: column;
+                        width: 30%;
+                        padding: 20px;
+                        border-radius: 20px;
+                        @include mobile{
+                           width: 100%;
+                           margin: 10px 0;
+                        }
+                        i{
+                            
+                            font-size: 30px;
+                            color: $txt-color-2;
+                        }
+                        p{
+                            margin: 20px 0;
+                            color: $txt-color-2;
+                        }
+                        h6{
+                            color: $txt-color-2;
+                            font-size: 26px;
+                            font-weight: bold;
+                        }
+                    }
+                    .today{
+                        background-color: #0694A2;
+                    }
+                    .month{
+                        background-color: #3F83F8;
+                    }
+                    .total{
+                        background-color: $main-color;
+                    }
+                }   
+                .count-data{
+                    @include flex(space-between,center);
+                    @include mobile{
+                        flex-direction: column;
+
+                    }
+                    margin: 40px 0;
+                    .order-total, .order-pending, .order-processing, .order-delivered{
+                        background-color: $txt-color-2;
+                        border: 1px solid $outline-color;
+                        border-radius: 20px;
+                        width: 23%;
+                        @include mobile{
+                            padding: 20px 10px;
+                            width: 100%;
+                            margin: 10px 0;
+                        }
+                        i{
+                            @include flex(center,center);
+                            border-radius: 50%;
+                            width: 50px;
+                            height: 50px;
+                            margin-right: 10px;
+                        }
+                        padding: 10px 20px;
+                        color: $txt-color-3;
+                        @include flex(unset,center);
+                       
+                    }
+                    .order-total{
+                        i{
+                            background-color: #FCD9BD;
+                            color: #D54C18;
+                        }
+                        &__count{
+                            p{
+                                font-size: 14px;
+                                margin: 5px 0;
+                            }
+                            h6{
+                                font-weight: bolder;
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                    .order-pending{
+                        i{
+                            background-color: #C3DDFD;
+                            color: #1C64F2;
+                        }
+                        &__count{
+                            p{
+                                font-size: 14px;
+                                margin: 5px 0;
+                            }
+                            h6{
+                                font-weight: bolder;
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                    .order-processing{
+                        i{
+                            background-color: #AFECEF;
+                            color: #1E8792;
+                        }
+                        &__count{
+                            p{
+                                font-size: 14px;
+                                margin: 5px 0;
+                            }
+                            h6{
+                                font-weight: bolder;
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                    .order-delivered{
+                        i{
+                            background-color: #BCF0DA;
+                            color: $main-color;
+                        }
+                        &__count{
+                            p{
+                                font-size: 14px;
+                                margin: 5px 0;
+                            }
+                            h6{
+                                font-weight: bolder;
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                }     
+                .charts{
+                    width: 100%;
+                    overflow-x:scroll;
+                }  
+            }
+        }
+    }
+
+}

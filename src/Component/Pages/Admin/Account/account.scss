@@ -1,0 +1,172 @@
+@use './../../../Scss/' as *;
+.staff{
+    &__container{  
+        font-family: $font-family;
+        @include flex(unset,unset);
+        &__main{
+            position: relative;
+            width: 100%;
+            &__wrap{
+                margin-top: 80px;
+                padding: 40px;
+                background-color: $bg-color;
+                border: 1px solid $outline-color;
+                border-radius: 5px;
+                h2{
+                    color: $txt-color-3;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0 0 30px 0;
+                    @include mobile{
+                        font-size: 20px;
+                    }
+                }
+                .function__staff{
+                    outline: 1px solid $outline-color;
+                    border-radius: 10px;
+                    padding: 30px 20px;
+                    background-color: #fff;
+                    width: 100%;
+                    @include flex(space-between, center);
+                    @include mobile{
+                        flex-direction: column;
+                    }
+                    &__select{
+                        width: 20%;
+                        @include mobile{
+                            padding: 10px;
+                            width: 100%;
+                        }
+                        @include laptop{
+                            width: 22%;
+                        }
+                        @include tablet{
+                            width: 30%;
+                        }
+                        select{
+                            width: 100%;
+                            padding: 10px;
+                            border-radius: 5px;
+                            border: 1px solid $outline-color;
+                            background-color: $bg-color;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                            &:focus{
+                                background-color: #fff;
+                                outline: none;
+                            }
+                        }
+                    }
+                    &__search{
+                        width: 50%;
+                        @include mobile{
+                            width: 100%;
+                            padding: 10px;
+                        }
+                        @include tablet{
+                            width: 42%;
+                        }
+                        input{
+                            width: 100%;
+                            border: 1px solid $outline-color;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            background-color: $bg-color;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                            &:focus{
+                                background-color: #fff;
+                                outline: none;
+                            }
+                        }
+                        
+                    }
+                    &__sort{
+                        width: 20%;
+                        @include mobile{
+                            padding: 10px;
+                            width: 100%;
+                        }
+                        @include laptop{
+                            width: 22%;
+                        }
+                        @include tablet{
+                            width: 30%;
+                        }
+                        select{
+                            width: 100%;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            border: 1px solid $outline-color;
+                            background-color: $bg-color;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                            &:focus{
+                                background-color: #fff;
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+                .list__staff{
+                    width: 100%;
+                    padding: 20px 0 0 0;
+                    @include mobile{
+                        overflow-x: scroll;
+                    }
+                    table{
+                        @include mobile{
+                            width: 800px;
+                        }
+                        width: 100%;
+                        td,th{
+                            text-align: left;     
+                            padding: 10px;
+                            font-size: 14px;
+                            align-items: center;
+                            vertical-align: middle;
+                            i{
+                                margin: 0 10px;
+                                font-size: 16px;
+                                color: $txt-color;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                                &:hover{
+                                    &:first-child{
+                                        color: $main-color;
+                                    }
+                                    &:last-child{
+                                        color: #FF5A1F;
+                                    }
+                                }
+                            }
+                        }
+                        .name{
+                            display: flex;
+                            p{
+                                margin-left: 10px;
+                            }
+                        }
+                        td{
+                            img{
+                                border-radius: 50%;
+                                width: 40px;
+                                height: 40px;
+                            }
+                            background-color: #fff;  
+                            padding: 5px 10px;
+                        }
+                        th{
+                            background-color: #e5e7eb;
+                        }
+                    }  
+                }
+               
+            }
+        }
+    }
+
+}

@@ -1,0 +1,61 @@
+@use './../Scss/' as *;
+.container__popup{ 
+    position: fixed;
+    top: calc(50% - 150px);
+    left: calc(50% - 175px);
+    z-index: 100;
+    width: 300px;
+    height: 350px;
+    background-color: $main-color;
+    @include flex(center,center);
+    &__success{
+      @include flex(center,center);
+      flex-direction: column;
+        .success{
+            background-color: $main-color;
+            @include flex(center,center);
+            border: 2px solid $txt-color-2;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            i{
+                font-size: 30px;
+                color: $txt-color-2;
+            }
+        }
+        h1{
+            text-align: center;
+            color: $txt-color-2;
+            font-size: 25px;
+            margin: 20px 0;
+        }
+        .button{
+            margin-top: 30px;
+            button{
+                cursor: pointer;
+                background-color: $main-color;
+                border-radius: 20px;
+                padding: 15px 20px;
+                width: 200px;
+                color: $txt-color-2;
+                border: 2px solid $txt-color-2;
+                transition: all 0.3s ease;
+                &:hover{
+                    background-color: $hover-color;
+                }
+            }
+        }
+    }
+}
+.unshowPopup{
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.4);
+    transition: all 0.5s ease;
+}
+.showPopup{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: all 0.5s ease;
+}

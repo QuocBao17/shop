@@ -1,0 +1,353 @@
+@use './../../../Scss/' as *;
+.coupons{
+    &__container{  
+        font-family: $font-family;
+        @include flex(unset,unset);
+        // &::after{
+        //     content: '';
+        //     position: fixed;
+        //     z-index: 10;
+        //     width: 100%;
+        //     height: 100%;
+        //     background-color: #333;
+        //     opacity: 0.2;
+        // }
+        &__main{
+            position: relative;
+            width: 100%;
+            &__wrap{
+                margin-top: 80px;
+                padding: 40px;
+                background-color: $bg-color;
+                border: 1px solid $outline-color;
+                border-radius: 5px;
+                h2{
+                    color: $txt-color-3;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0 0 30px 0;
+                    @include mobile{
+                        font-size: 20px;
+                    }
+                }
+                .function__coupons{
+                    outline: 1px solid $outline-color;
+                    border-radius: 10px;
+                    padding: 30px 20px;
+                    background-color: #fff;
+                    width: 100%;
+                    @include flex(space-between, center);
+                    @include mobile{
+                        flex-direction: column;
+                    }
+                    &__search{
+                        width: 75%;
+                        @include mobile{
+                            width: 100%;
+                            padding: 10px;
+                        }
+                        input{
+                            width: 100%;
+                            border: 1px solid $outline-color;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            background-color: $bg-color;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                            &:focus{
+                                background-color: #fff;
+                                outline: none;
+                            }
+                        }
+                        
+                    }
+                    &__add-coupons{
+                        @include mobile{
+                            width: 100%;
+                            padding: 10px;
+                        }
+                        width: 23%;
+                        button{
+                            font-size: 14px;
+                            border: 1px solid $main-color;
+                            width: 100%;
+                            padding: 12px 20px;
+                            background-color: $main-color;
+                            border-radius: 5px;
+                            color: $txt-color-2;
+                            &:hover{
+                                background-color: $hover-color;
+                                
+                            }
+                            transition: all 0.3s ease-in;
+                            span{
+                                margin: 0 5px;
+                                color: $txt-color-2;
+                            }
+                        }
+
+                    }
+                }
+                .list__coupons{
+                    width: 100%;
+                    padding: 20px 0 0 0;
+                    @include mobile{
+                        overflow-x: scroll;
+                      
+                    }
+                    @include tablet{
+                        overflow-x: scroll;
+                      
+                    }
+                    overflow-x: scroll;
+                    table{
+                        @include tablet{
+                            width: 1300px;
+                        }
+                        @include mobile{
+                            width: 1300px;
+                        }
+                        width: 120%;
+                        td,th{
+                            &:nth-child(4){
+                                width: 16%;
+                            }
+                            &:first-child, &:nth-child(6),&:nth-child(8),&:nth-child(9){
+                                width: 5%;
+                            }
+                            width: 10%;
+                            text-align:left;     
+                            padding: 10px;
+                            font-size: 14px;
+                            align-items: center;
+                            vertical-align: middle;
+                            i{
+                                margin: 0 10px;
+                                font-size: 16px;
+                                color: $txt-color;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                                &:hover{
+                                    &:first-child{
+                                        color: $main-color;
+                                    }
+                                    &:last-child{
+                                        color: #FF5A1F;
+                                    }
+                                }
+                            }
+                        }
+                        td{
+                            height: 50px;
+                            background-color: #fff;  
+                            padding: 5px 10px;
+                            
+                        }
+                        .active{
+                            p{
+                                background-color: rgb(220, 245, 218);
+                                @include flex(center,center);
+                                padding: 5px 5px;
+                                color: $main-color;
+                                font-size: 11px;
+                                border-radius: 25px;
+                            }
+                        }
+                        .expire{
+                          p{
+                            background-color: #f3d9d0;
+                            color: #FF5A1F;
+                            font-size: 12px;
+                            @include flex(center,center);
+                            padding: 5px 5px;
+                            font-size: 11px;
+                            border-radius: 25px;
+                          }
+                        }
+                        th{
+                            background-color: #e5e7eb;
+                        }
+                    }  
+                }
+               
+            }
+        }
+        &__popup-add-coupons{
+            position: fixed;
+            right: 0;
+            width: 50%;
+            z-index:11;
+            height: 100%;
+            @include mobile{
+                width: 100%;
+            }
+            &__wrap{
+                height: 100%;
+               form{
+                height: 100%;
+                .add-coupons__top-form{
+                    @include flex(unset,center);
+                    background-color: #F9FAFB;
+                    height: 20%;
+                    
+                    &__decription{
+                        width: 100%;
+                        padding: 20px;
+                        h2{
+                            margin: 5px 0;
+                            font-size: 20px;
+                            color: $txt-color-3;
+                            @include mobile{
+                                font-size: 18px;
+                            }
+                        }
+                        h3{
+                            margin: 5px 0;
+                            font-size: 14px;
+                            @include mobile{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    &__close{
+                        padding: 20px;
+                        i{
+                            cursor: pointer;
+                            @include flex(center,center);
+                            color: #FF5A1F;
+                            font-size: 12px;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            box-shadow: 0 0 2px $txt-color;
+                            transition: all 0.3s ease;
+                            &:hover{
+                                color: #333;
+                                background-color: #ffd9e1;
+                            }
+                        }
+                    }
+                }
+                .add-coupons__center-form{
+                    overflow-y: scroll;
+                    position: relative;
+                    width: 100%;
+                    background-color: $txt-color-2;
+                    height: 80%;
+                    .add-coupons__name{
+                        padding:  10px 20px;
+                        &:first-child{
+                            padding-top: 30px;
+                        }
+                        @include flex(space-between,unset);
+                        @include mobile{
+                            padding: 5px 20px;
+                            flex-direction: column;
+                        }
+                        p{
+                            font-size: 14px;
+                        }
+                        input, select{
+                            @include mobile{
+                                margin: 20px 0;
+                                width: 100%;
+                            }
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                            &:focus{
+                                background-color: $txt-color-2;
+                            }
+                            outline: none;
+                            transition:  all 0.3s ease;
+                            background-color: $bg-color;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            border: 1px solid $outline-color;
+                            width: 65%;
+                            
+                        }
+                    }
+                    .add-coupons__decription{
+                        @include flex(space-between,unset);
+                        padding: 20px;
+                        textarea{
+                            outline: none;
+                            transition:  all 0.3s ease;
+                            background-color: $bg-color;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            border: 1px solid $outline-color;
+                            width: 65%;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .add-coupons__button{
+                        background-color: #F9FAFB;
+                        width: 100%;
+                        margin-top: 40px;
+                        padding: 40px 20px;
+                        @include flex(space-between,center);
+                        &__cancel{
+                            width: 48%;
+                            button{
+                                padding: 15px 20px;
+                                color: #FF5A1F;
+                                border: 1px solid $outline-color;
+                                border-radius: 5px;
+                                background-color: $txt-color-2;
+                                width: 100%;
+                                transition: all 0.5s ease;
+                                &:hover{
+                                    background-color: #ffd9e1;
+                                }
+                            }
+                        }
+                        &__add{
+                            width: 48%;
+                            button{
+                                padding: 15px 20px;
+                                background-color: $main-color;
+                                border: 1px solid $outline-color;
+                                border-radius: 5px;
+                                color: $txt-color-2;
+                                width: 100%;
+                                transition: all 0.5s ease;
+                                &:hover{
+                                    background-color: $hover-color;
+                                }
+                            }
+                        }
+                    }
+                }
+               }
+            }
+        }
+    }
+
+}
+.closeForm{
+    .coupons__container__popup-add-coupons{
+      transform: translateX(300px);
+      opacity: 0;
+      transition: all 0.6s ease;
+      visibility: hidden;
+    }
+    &:after{
+       display: none;
+    }
+}
+.openForm{
+    .coupons__container__popup-add-coupons{
+        transform: translateX(0px);
+        opacity: 1;
+        transition: all 0.6s ease;
+        visibility: visible;
+      }
+      &:after{
+        display: block;
+     }
+}

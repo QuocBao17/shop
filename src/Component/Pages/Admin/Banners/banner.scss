@@ -1,0 +1,441 @@
+@use './../../../Scss/' as *;
+.banner{
+    &__container{  
+        font-family: $font-family;
+        @include flex(unset,unset);
+        // &::after{
+        //     content: '';
+        //     position: fixed;
+        //     z-index: 10;
+        //     width: 100%;
+        //     height: 100%;
+        //     background-color: #333;
+        //     opacity: 0.2;
+        // }
+        &__main{
+            position: relative;
+            width: 100%;
+            &__wrap{
+                margin-top: 80px;
+                padding: 40px;
+                background-color: $bg-color;
+                border: 1px solid $outline-color;
+                border-radius: 5px;
+                h2{
+                    color: $txt-color-3;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0 0 30px 0;
+                    @include mobile{
+                        font-size: 20px;
+                    }
+                }
+                .function__banner{
+                    outline: 1px solid $outline-color;
+                    border-radius: 10px;
+                    padding: 30px 20px;
+                    background-color: #fff;
+                    width: 100%;
+                    @include flex(space-between, center);
+                    @include mobile{
+                        flex-direction: column;
+                    }
+                    &__sort{
+                        width: 20%;
+                        @include mobile{
+                            padding: 10px;
+                            width: 100%;
+                        }
+                        @include laptop{
+                            width: 22%;
+                        }
+                        @include tablet{
+                            width: 30%;
+                        }
+                        select{
+                            width: 100%;
+                            padding: 10px;
+                            border-radius: 5px;
+                            border: 1px solid $outline-color;
+                            background-color: $bg-color;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                            &:focus{
+                                background-color: #fff;
+                                outline: none;
+                            }
+                        }
+                    }
+                    &__search{
+                        width: 50%;
+                        @include mobile{
+                            width: 100%;
+                            padding: 10px;
+                        }
+                        @include tablet{
+                            width: 42%;
+                        }
+                        input{
+                            width: 100%;
+                            border: 1px solid $outline-color;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            background-color: $bg-color;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                            &:focus{
+                                background-color: #fff;
+                                outline: none;
+                            }
+                        }
+                        
+                    }
+                    &__add-banner{
+                        
+                        @include mobile{
+                            width: 100%;
+                            padding: 10px;
+                        }
+                        width: 24%;
+                        button{
+                            font-size: 14px;
+                            border: 1px solid $main-color;
+                            width: 100%;
+                            padding: 12px 20px;
+                            background-color: $main-color;
+                            border-radius: 5px;
+                            color: $txt-color-2;
+                            &:hover{
+                                background-color: $hover-color;
+                                
+                            }
+                            transition: all 0.3s ease-in;
+                            span{
+                                margin: 0 5px;
+                                color: $txt-color-2;
+                            }
+                        }
+
+                    }
+                }
+                .list__banner{
+                    width: 100%;
+                    padding: 20px 0 0 0;
+                    @include mobile{
+                        overflow-x: scroll;
+                    }
+                    table{
+                        @include mobile{
+                            width: 800px;
+                        }
+                        width: 100%;
+                        td,th{
+                            &:nth-child(3){
+                                width: 30%;
+                            }
+                            &:nth-child(2){
+                                width: 16%;
+                            }
+                            &:nth-child(4),&:nth-child(5){
+                                text-align: center;
+                            }
+                            width: 10%;
+                            text-align: left;     
+                            padding: 10px;
+                            font-size: 14px;
+                            align-items: center;
+                            vertical-align: middle;
+                            .published{
+                                cursor: pointer;
+                                position: relative;
+                                transform: translateX(-50%);
+                                left: 50%;
+                                width: 20px;
+                                height: 10px;
+                                border-radius:25px;
+                                background-color: $main-color;
+                                &::after{
+                                    content: '';
+                                    top: 1px;
+                                    position: absolute;
+                                    width: 9px;
+                                    height: 8px;
+                                    background-color: #fff;
+                                    border-radius: 50%;
+                                }
+                            }
+                            .published-disable{
+                                cursor: pointer;
+                                position: relative;
+                                z-index: 1;
+                                transform: translateX(-50%);
+                                left: 50%;
+                                width: 20px;
+                                height: 10px;
+                                border-radius:25px;
+                                background-color: #FF5A1F;
+                                &::after{
+                                    left: 1px;
+                                    content: '';
+                                    top: 1px;
+                                    position: absolute;
+                                    width: 9px;
+                                    height: 8px;
+                                    background-color:#fff ;
+                                    border-radius: 50%;
+                                }
+                            }
+                            i{
+                                margin: 0 10px;
+                                font-size: 16px;
+                                color: $txt-color;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                                &:hover{
+                                    &:first-child{
+                                        color: $main-color;
+                                    }
+                                    &:last-child{
+                                        color: #FF5A1F;
+                                    }
+                                }
+                            }
+                        }
+                        td{
+                            img{
+                                width: 300px;
+                                height: 100px;
+                            }
+                            background-color: #fff;  
+                            padding: 5px 10px;
+                        }
+                        th{
+                            background-color: #e5e7eb;
+                        }
+                    }  
+                }
+               
+            }
+        }
+        &__popup-add-banner{
+            position: fixed;
+            right: 0;
+            width: 50%;
+            z-index:11;
+            height: 100%;
+            @include mobile{
+                width: 100%;
+            }
+            &__wrap{
+                height: 100%;
+               form{
+                height: 100%;
+                .add-banner__top-form{
+                    @include flex(unset,center);
+                    background-color: #F9FAFB;
+                    height: 20%;
+                    
+                    &__decription{
+                        width: 100%;
+                        padding: 20px;
+                        h2{
+                            margin: 5px 0;
+                            font-size: 20px;
+                            color: $txt-color-3;
+                            @include mobile{
+                                font-size: 18px;
+                            }
+                        }
+                        h3{
+                            margin: 5px 0;
+                            font-size: 14px;
+                            @include mobile{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    &__close{
+                        padding: 20px;
+                        i{
+                            cursor: pointer;
+                            @include flex(center,center);
+                            color: #FF5A1F;
+                            font-size: 12px;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            box-shadow: 0 0 2px $txt-color;
+                            transition: all 0.3s ease;
+                            &:hover{
+                                color: #333;
+                                background-color: #ffd9e1;
+                            }
+                        }
+                    }
+                }
+                .add-banner__center-form{
+                    position: relative;
+                    width: 100%;
+                    background-color: $txt-color-2;
+                    height: 80%;
+                    .add-banner__name{
+                        padding:  10px 20px;
+                        &:first-child{
+                            padding-top: 30px;
+                        }
+                        @include flex(space-between,unset);
+                        @include mobile{
+                            padding: 5px 20px;
+                            flex-direction: column;
+                        }
+                        p{
+                            font-size: 14px;
+                        }
+                        input, select{
+                            @include mobile{
+                                margin: 20px 0;
+                                width: 100%;
+                            }
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                            &:focus{
+                                background-color: $txt-color-2;
+                            }
+                            outline: none;
+                            transition:  all 0.3s ease;
+                            background-color: $bg-color;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            border: 1px solid $outline-color;
+                            width: 65%;
+                            
+                        }
+                    }
+                    .add-banner__image{
+                        height: 40%;
+                        @include flex(space-between,unset);
+                        @include mobile{
+                            justify-content: unset;
+                            flex-direction: column;
+                            padding: 5px 20px;
+                            margin-bottom: 40px;
+                        }
+                        padding: 20px;
+                        p{
+                            font-size: 14px; 
+                        }
+                        input{
+                            display: none;
+                        }
+                        label{
+                            position: relative;
+                            @include flex(center,center);
+                            flex-direction: column;
+                            border: 2px $outline-color dashed;
+                            border-radius: 5px;
+                            width: 65%; 
+                            @include mobile{
+                                width: 100%;
+                                margin: 20px 0;
+                              
+                            }   
+                            i{
+                                @include mobile{
+                                    margin-top: 50px;
+                                }
+                                color: $main-color;
+                                font-size: 28px;
+                            }
+                            h5{
+                                font-style: italic;
+                                color: red;
+                                bottom: -30px; 
+                                left: 50%;
+                                transform: translateX(-50%);
+                                position: absolute;
+                                font-size: 14px;
+                            }
+                            p{
+                                font-size: 14px;
+                                margin: 10px 0;
+                            }
+                            h6{
+                                @include mobile{
+                                    margin-bottom: 50px;
+                                }
+                                padding: 0px 10px;
+                                text-align: center;
+                                font-size: 12px;
+                                font-style: italic;
+                            }
+                        }
+                    }
+                    .add-banner__button{
+                        background-color: #F9FAFB;
+                        width: 100%;
+                        margin-top: 40px;
+                        padding: 40px 20px;
+                        @include flex(space-between,center);
+                        &__cancel{
+                            width: 48%;
+                            button{
+                                padding: 15px 20px;
+                                color: #FF5A1F;
+                                border: 1px solid $outline-color;
+                                border-radius: 5px;
+                                background-color: $txt-color-2;
+                                width: 100%;
+                                transition: all 0.5s ease;
+                                &:hover{
+                                    background-color: #ffd9e1;
+                                }
+                            }
+                        }
+                        &__add{
+                            width: 48%;
+                            button{
+                                padding: 15px 20px;
+                                background-color: $main-color;
+                                border: 1px solid $outline-color;
+                                border-radius: 5px;
+                                color: $txt-color-2;
+                                width: 100%;
+                                transition: all 0.5s ease;
+                                &:hover{
+                                    background-color: $hover-color;
+                                }
+                            }
+                        }
+                    }
+                }
+               }
+            }
+        }
+    }
+
+}
+.closeForm{
+    .banner__container__popup-add-banner{
+      transform: translateX(300px);
+      opacity: 0;
+      transition: all 0.6s ease;
+      visibility: hidden;
+    }
+    &:after{
+       display: none;
+    }
+}
+.openForm{
+    .banner__container__popup-add-banner{
+        transform: translateX(0px);
+        opacity: 1;
+        transition: all 0.6s ease;
+        visibility: visible;
+      }
+      &:after{
+        display: block;
+     }
+}
