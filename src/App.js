@@ -1,5 +1,5 @@
 import './App.scss';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import CheckRole from './Component/CheckRole/CheckRole';
 import { useState } from 'react';
 import Navbar from './Component/Navbar/Navbar';
@@ -28,8 +28,8 @@ function App() {
     setFormStatus(formStt);
   }
   return (
-    <BrowserRouter basename ="/project1_shop">
-        <Routes>
+   <HashRouter basename='/shop'>
+      <Routes>
           <Route path='/' element={<Login></Login>}></Route>
             <Route path='/products' element={<Product menuStatus={menuStatus} formStatus={formStatus} getFormStatus={getFormStatus} 
             getMenuStatus={getMenuStatus}></Product>}></Route>
@@ -40,7 +40,6 @@ function App() {
             getMenuStatus={getMenuStatus}></Counpons>}></Route>
             <Route path='/banners' element={<Banners  menuStatus={menuStatus} formStatus={formStatus} getFormStatus={getFormStatus} 
             getMenuStatus={getMenuStatus}></Banners>}></Route>
-            {/* <Route path='/login' element={<Login></Login>}></Route> */}
             <Route path='/forgot-password' element={<ForgotPassword></ForgotPassword>}></Route>
             <Route path='/sign-up' element={<CreateAccount></CreateAccount>}></Route>
             <Route path='/staff' element={<Staff  menuStatus={menuStatus} formStatus={formStatus} getFormStatus={getFormStatus} 
@@ -51,8 +50,7 @@ function App() {
             getMenuStatus={getMenuStatus}></Profile>}></Route>
             <Route path='/dashboard' element={<Dashboard menuStatus={menuStatus} getMenuStatus={getMenuStatus}></Dashboard>}></Route>
         </Routes>
-    
-    </BrowserRouter>
+   </HashRouter>
   );
 }
 
