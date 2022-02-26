@@ -53,6 +53,12 @@ const Login =()=>{
         return formIsEnter;
     }
     const onLogin=()=>{
+        localStorage.setItem('session', JSON.stringify({
+            role:'',
+            name:'',
+            avatar:'',
+            email:''
+        }));
         const auth = getAuth();
         let email =fieldsInput.fields['email'];
         let password=fieldsInput.fields['password']
