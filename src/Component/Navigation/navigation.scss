@@ -38,19 +38,31 @@
         @include flex(unset,center);
         &__button{
             @include flex(unset,center);
+            .navigation-btn-1, .navigation-btn-3{
+                button{
+                    background-color: $txt-color-2;
+                    border: 1px solid $main-color;
+                    color: $main-color;
+                }
+            }
+            .navigation-btn-2{
+                button{
+                    color: $txt-color-2;
+                    background-color: $main-color;
+                    border: 1px solid $main-color;
+                }
+            }
             button{
                 margin: 0 5px;
-                color: $txt-color-2;
-                background-color: $main-color;
                 width: 35px;
                 height: 35px;
                 border-radius: 5px;
-                border: 1px solid $main-color;
                 font-size: 10px;
                 @include flex(center,center);
                 &:disabled{
-                    background-color: rgb(114, 108, 108);
-                    border: 1px solid rgb(114, 108, 108);
+                    color: #a8a8a8;
+                    background-color: $txt-color-2;
+                    border: 3px solid  #a8a8a8;
                 }
             }
            
