@@ -91,6 +91,13 @@
                     margin-left: 10px;
                     color: #ff1f1f;
                 }
+                .test-account{
+                    @include flex(center,center);
+                    p{
+                        font-size: 14px;
+                        color: #746e6e;
+                    }
+                }
                 button{
                     margin-top: 40px;
                     width: 100%;
@@ -108,7 +115,7 @@
                     }
                 }
             }
-         
+           
             &__facebook{
                 margin: 100px 0 20px 0;
                 button{

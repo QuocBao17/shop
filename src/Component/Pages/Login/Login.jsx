@@ -105,8 +105,12 @@ const Login =()=>{
                         <label htmlFor="">Password</label>
                         <input type="password" placeholder=".............." onChange={onHandleChange} name='password' value={fieldsInput.fields['password']||''} />
                         <span>{fieldsInput.errors['password']}</span>
+                        <div className="test-account">
+                            <p>Test account: admin@gmail.com - 123123</p>
+                        </div>
                         <button type="submit" onClick={onSubmit}>Login</button>
                     </form>
+                    
                     <div className="login__container__form__facebook">
                         <button><p><i className="fab fa-facebook-f"></i> <span>Login With Facebook</span></p></button>
                     </div>
